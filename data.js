@@ -1,10 +1,8 @@
-// === PÄIVÄMÄÄRÄT ===
-// Kesän aloitus- ja lopetuspäivä
-let SUMMER_START = new Date('2026-04-21');
+// päivämäärät -- kesän aloitus- ja lopetuspäivä
+let SUMMER_START = new Date('2026-04-26');
 let SUMMER_END   = new Date('2026-08-16');
 
-// === KATEGORIAT ===
-// Jokainen kategoria saa emojin ja värin
+// kategoriat -- jokainen kategoria saa emojin ja värin
 let categories = {
   'Konsertti':   { emoji: '🎵', color: '#9B59B6' },
   'Luonto':      { emoji: '🌿', color: '#2ECC71' },
@@ -18,8 +16,7 @@ let categories = {
   'Haaste':      { emoji: '⚡', color: '#E74C3C' },
 };
 
-// === VIIKKOJEN SISÄLTÖ ===
-// 13 luukkua, yksi per kesäviikko
+// viikkojen sisältö -- 13 luukkua, yksi per kesäviikko
 let weekContents = [
   { cat: 'Konsertti',   title: 'Flow Festival -ennakko',        desc: 'Parhaat artistit tänä kesänä – katso lineup ja hanki liput ajoissa! Flow Festivalilla parhaat kansainväliset ja kotimaiset artistit.',    loc: 'Suvilahti, Helsinki',              mapUrl: 'https://maps.google.com/?q=Suvilahti+Helsinki' },
   { cat: 'Luonto',      title: 'Nuuksion kansallispuisto',       desc: 'Patikointi Nuuksioon! Hyvät reitit eri kuntotasoille. Mukaan eväät ja vedenpitävät kengät.',                                              loc: 'Nuuksio, Espoo',                   mapUrl: 'https://maps.google.com/?q=Nuuksion+kansallispuisto' },
@@ -36,6 +33,5 @@ let weekContents = [
   { cat: 'Haaste',      title: 'Kesäbingo 2026',                  desc: 'Viimeinen luukku: TIKOn kesäbingo! Kuinka monta kesäaktiviteettia sait tehtyä? Jaa tuloksesi!',                                           loc: 'Kaikkialla Helsingissä 🎉',        mapUrl: 'https://maps.google.com/?q=Helsinki' },
 ];
 
-// === VÄRIPALKIT ===
-// Jokainen luukku saa oman värin yläreunaan
+// väripalkit -- jokainen luukku saa oman värin yläreunaan
 let bandColors = ['#3ABEFF','#FF6B6B','#2ECC71','#FFB800','#9B59B6','#E67E22','#1ABC9C','#F39C12','#E74C3C','#3ABEFF','#FF6B6B','#2ECC71','#FFB800'];
