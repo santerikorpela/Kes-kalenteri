@@ -39,25 +39,22 @@
 <!-- Kalenteri-grid: luukut lisätään tähän JavaScriptillä -->
 <div class="calendar" id="calendar"></div>
 
-<!-- Heinänkorret sivun alareunaan -->
-<div class="grass" id="grass"></div>
-
-<!-- Modal-ikkuna -->
-<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
-  <div class="modal" id="modal">
-    <button class="modal-close" onclick="closeModalBtn()">✕</button>
-    <div class="modal-week" id="modal-week"></div>
-    <div class="modal-title" id="modal-title"></div>
-    <div class="modal-category" id="modal-category"></div>
-    <div class="modal-desc" id="modal-desc"></div>
-    <div class="modal-location" id="modal-location" onclick="openMap()">📍 <span id="modal-location-text"></span></div>
+<!-- infoikkuna-ikkuna -->
+<div class="infoikkuna-overlay" id="infoikkuna-overlay" onclick="closeInfoikkuna(event)">
+  <div class="infoikkuna" id="infoikkuna">
+    <button class="infoikkuna-close" onclick="closeInfoikkunaBtn()">✕</button>
+    <div class="infoikkuna-week" id="infoikkuna-week"></div>
+    <div class="infoikkuna-title" id="infoikkuna-title"></div>
+    <div class="infoikkuna-category" id="infoikkuna-category"></div>
+    <div class="infoikkuna-desc" id="infoikkuna-desc"></div>
+    <div class="infoikkuna-location" id="infoikkuna-location" onclick="openMap()">📍 <span id="infoikkuna-location-text"></span></div>
   </div>
 </div>
 
 <!-- JS-tiedostot ladataan body:n loppuun, jotta HTML on valmis ennen skriptejä -->
 <script src="data.js"></script>
 <script src="kalenteri.js"></script>
-<script src="modal.js"></script>
+<script src="infoikkuna.js"></script>
 <script src="effects.js"></script>
 
 </body>
