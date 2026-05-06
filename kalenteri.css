@@ -1,5 +1,8 @@
+
+/* poistaa selainten oletusmarginaalit ja -paddingt elementeiltä */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* sivun perustyyli */
 body {
   font-family: Arial, sans-serif;
   background: #f0f0f0;
@@ -7,29 +10,26 @@ body {
   min-height: 100vh;
 }
 
+/* sivun yläosa jossa otsikko ja infopillerit */
 header {
   text-align: center;
   padding: 40px 20px 30px;
 }
 
+/* pääotsikko */
 h1 {
   font-size: 2.5rem;
   font-weight: bold;
   color: #333;
 }
 
+/* kesäkalenteri-sana otsikossa */
 h1 span {
   color: #f5a623;
   display: block;
 }
 
-.subtitle {
-  font-size: 12px;
-  color: #999;
-  margin-bottom: 10px;
-  letter-spacing: 2px;
-}
-
+/* infopillerien rivi otsikon alla */
 .header-meta {
   margin-top: 16px;
   display: flex;
@@ -38,6 +38,7 @@ h1 span {
   flex-wrap: wrap;
 }
 
+/* yksittäinen infopilleri esim. "13 viikkoa" */
 .meta-pill {
   background: white;
   border: 1px solid #ddd;
@@ -49,6 +50,7 @@ h1 span {
   gap: 6px;
 }
 
+/* pieni väripiste pillerin sisällä */
 .meta-pill .dot {
   width: 7px;
   height: 7px;
@@ -56,13 +58,14 @@ h1 span {
   background: #4caf50;
 }
 
-/* Edistymispalkki */
+/* edistymispalkki -- valkoinen kortti jossa päivämäärät ja oranssi palkki */
 .date-bar {
   max-width: 800px;
   margin: 0 auto 30px;
   padding: 0 20px;
 }
 
+/* kortin sisäosa: vasemmalla päivämäärät, oikealla palkki */
 .date-range {
   background: white;
   border: 1px solid #ddd;
@@ -75,6 +78,7 @@ h1 span {
   gap: 12px;
 }
 
+/* pieni yläotsikko esim. "kesäloma 2026" */
 .date-range-label {
   font-size: 11px;
   text-transform: uppercase;
@@ -82,6 +86,7 @@ h1 span {
   letter-spacing: 1px;
 }
 
+/* isompi päivämääräteksti */
 .date-range-text {
   font-size: 1.1rem;
   font-weight: bold;
@@ -89,8 +94,10 @@ h1 span {
   margin-top: 4px;
 }
 
+/* edistymispalkin wrapper, joustaa flexissä */
 .progress-wrap { flex: 1; min-width: 120px; max-width: 260px; }
 
+/* harmaa taustaviiva palkille */
 .progress-bar {
   height: 5px;
   background: #e0e0e0;
@@ -99,6 +106,7 @@ h1 span {
   margin-top: 6px;
 }
 
+/* oranssi täyttöosa progress barille, leveys asetetaan JS:ssä prosenttina */
 .progress-fill {
   height: 100%;
   background: #f5a623;
@@ -106,7 +114,7 @@ h1 span {
   transition: width 1s ease;
 }
 
-/* Kalenteri */
+/* kalenteri grid -- 13 luukkua rivissä, (pitäis) sopeutuu näytön leveyteen */
 .calendar {
   max-width: 1000px;
   margin: 0 auto;
@@ -116,7 +124,7 @@ h1 span {
   gap: 12px;
 }
 
-/* Luukku */
+/* luukku kortti -- jokainen viikko on oma korttinsa */
 .hatch {
   background: white;
   border: 1px solid #ddd;
@@ -127,13 +135,20 @@ h1 span {
   overflow: hidden;
 }
 
+/* hover-efekti avatuille luukuille */
 .hatch:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+
+/* lukittu luukku: harmaampi tausta, ei klikkauskursoria */
 .hatch.locked { cursor: default; background: #fafafa; }
 .hatch.locked:hover { box-shadow: none; }
 
+/* ohut väripalkki kortin yläreunassa, väri asetetaan JS:ssä */
 .hatch-color-band { height: 5px; }
+
+/* kortin sisäinen padding */
 .hatch-body { padding: 16px; }
 
+/* iso viikkonumero esim. "21" */
 .week-number {
   font-size: 2.2rem;
   font-weight: bold;
@@ -141,6 +156,7 @@ h1 span {
   line-height: 1;
 }
 
+/* pieni "VIIKKO" -teksti numeron alla */
 .week-label {
   font-size: 10px;
   text-transform: uppercase;
@@ -149,12 +165,14 @@ h1 span {
   margin-top: 2px;
 }
 
+/* päivämääräväli esim. "18.5. – 24.5." */
 .week-dates {
   font-size: 12px;
   color: #aaa;
   margin-top: 8px;
 }
 
+/* lukitun luukun harmaa alue jossa 🔒 ja avauspäivä */
 .lock-area {
   margin-top: 12px;
   padding: 8px 10px;
@@ -168,6 +186,7 @@ h1 span {
 .lock-icon { font-size: 13px; }
 .lock-text  { font-size: 12px; color: #aaa; }
 
+/* avatun luukun oranssi "Avaa luukku" -nappi */
 .open-area {
   margin-top: 12px;
   padding: 8px 10px;
@@ -183,6 +202,7 @@ h1 span {
 
 .open-icon { font-size: 13px; }
 
+/* sisältöalue joka paljastuu kun luukku avataan, tämä on piilotettu oletuksena */
 .content-peek {
   margin-top: 10px;
   padding: 10px;
@@ -194,8 +214,10 @@ h1 span {
   display: none;
 }
 
+/* näytetään sisältö kun kortilla on "opened"-luokka */
 .hatch.opened .content-peek { display: block; }
 
+/* kategoria esim. "🎵 KONSERTTI" */
 .content-category {
   font-size: 10px;
   text-transform: uppercase;
@@ -204,9 +226,13 @@ h1 span {
   margin-bottom: 4px;
 }
 
+/* tapahtuman nimi */
 .content-title { font-weight: bold; font-size: 13px; margin-bottom: 4px; }
-.content-desc  { font-size: 11px; color: #888; }
 
+/* lyhyt kuvaus  */
+.content-desc { font-size: 11px; color: #888; }
+
+/* sijaintiteksti esim. "📍 Suvilahti, Helsinki" */
 .map-badge {
   display: inline-block;
   margin-top: 6px;
@@ -214,6 +240,7 @@ h1 span {
   color: #888;
 }
 
+/* punainen "TÄMÄ VIIKKO" -merkki kortin oikeassa yläkulmassa */
 .today-badge {
   position: absolute;
   top: 10px;
@@ -228,6 +255,7 @@ h1 span {
   letter-spacing: 1px;
 }
 
+/* animaatio kun luukku avataan: liukuu ylhäältä alas */
 @keyframes openHatch {
   0%   { opacity: 0; transform: translateY(-6px); }
   100% { opacity: 1; transform: translateY(0); }
@@ -237,8 +265,8 @@ h1 span {
   animation: openHatch 0.3s ease forwards;
 }
 
-/* Modal */
-.modal-overlay {
+/* infoikkuna -- tumma tausta koko ruudulla kun infoikkuna on auki */
+.infoikkuna-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.5);
@@ -252,9 +280,11 @@ h1 span {
   transition: opacity 0.2s;
 }
 
-.modal-overlay.active { opacity: 1; pointer-events: all; }
+/* näyttää infoikkunan kun saa "active"-luokan JS:stä */
+.infoikkuna-overlay.active { opacity: 1; pointer-events: all; }
 
-.modal {
+/* valkoinen infoikkuna keskellä ruutua */
+.infoikkuna {
   background: white;
   border-radius: 6px;
   max-width: 440px;
@@ -267,9 +297,11 @@ h1 span {
   overflow-y: auto;
 }
 
-.modal-overlay.active .modal { transform: translateY(0); }
+/* liukuu paikalleen kun avataan */
+.infoikkuna-overlay.active .infoikkuna { transform: translateY(0); }
 
-.modal-close {
+/* X-sulkupainike oikeassa yläkulmassa */
+.infoikkuna-close {
   position: absolute;
   top: 12px;
   right: 12px;
@@ -282,12 +314,16 @@ h1 span {
   font-size: 14px;
 }
 
-.modal-close:hover { background: #f5f5f5; }
+.infoikkuna-close:hover { background: #f5f5f5; }
 
-.modal-week    { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
-.modal-title   { font-size: 1.4rem; font-weight: bold; color: #333; margin-bottom: 8px; }
+/* pieni viikkoteksti esim. "VIIKKO 21 · 18.5–24.5." */
+.infoikkuna-week { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
 
-.modal-category {
+/* tapahtuman nimi isolla */
+.infoikkuna-title { font-size: 1.4rem; font-weight: bold; color: #333; margin-bottom: 8px; }
+
+/* värillinen kategorianappi, väri tulee JS:stä */
+.infoikkuna-category {
   display: inline-block;
   padding: 3px 10px;
   border-radius: 3px;
@@ -299,9 +335,11 @@ h1 span {
   color: white;
 }
 
-.modal-desc { font-size: 14px; line-height: 1.6; color: #555; margin-bottom: 16px; }
+/* koko kuvaus */
+.infoikkuna-desc { font-size: 14px; line-height: 1.6; color: #555; margin-bottom: 16px; }
 
-.modal-location {
+/* sijaintinappi joka avaa Google Mapsin */
+.infoikkuna-location {
   padding: 10px 14px;
   background: #f5f5f5;
   border-radius: 4px;
@@ -310,12 +348,4 @@ h1 span {
   cursor: pointer;
 }
 
-.modal-location:hover { background: #ececec; }
-
-/* Poistetaan sky, sun, clouds, grass */
-.sky-bg, .sun, .cloud, .grass, .grass-blade { display: none; }
-
-@media (max-width: 600px) {
-  .calendar { grid-template-columns: repeat(2, 1fr); }
-  h1 { font-size: 1.8rem; }
-}
+.infoikkuna-location:hover { background: #ececec; }
